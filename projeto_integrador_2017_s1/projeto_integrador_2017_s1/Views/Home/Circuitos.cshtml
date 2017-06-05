@@ -1,0 +1,41 @@
+<style media="screen">
+	.out { font-size: 1.5em;	};
+</style>
+<br><br><br><br>
+<div class="circuito">
+	<table class="out">
+		<tr>
+			<td class="S pull-right"> 000</td>
+			<td>Ação Realizada</td>
+		</tr>
+		<tr>
+			<td class="v1 pull-right">0000</td>
+			<td>Valor A</td>
+		</tr>
+		<tr>
+			<td class="v2 pull-right">0000</td>
+			<td>Valor B</td>
+		</tr>
+		<tr>
+			<td class="sRes pull-right">0000</td>
+			<td>Resultado</td>
+		</tr>
+		<tr>
+			<td class="MSB pull-right">0</td>
+			<td class="pl1">Valor Negativo</td>
+		</tr>
+		<tr>
+			<td class="OVR pull-right">0</td>
+			<td class="pl2">Valor com mais de 4</td>
+		</tr>
+	</table><br>
+	<input class="sVal1" type="text" maxlength="4" />
+	<input class="sVal2" type="text" maxlength="4" /><br><br>
+	<button onclick="calculo('bMenosA')">B MENOS A ( 001 )</button>
+	<button onclick="calculo('aMenosB')">A MENOS B ( 010 )</button>
+	<button onclick="calculo('aMaisB')">A MAIS B ( 011 )</button>
+	<button type="button" onclick="location.reload();">LIMPAR ( 000 )</button>
+
+</div>
+
+	<script src="/Scripts/Ula.js" charset="utf-8"></script>

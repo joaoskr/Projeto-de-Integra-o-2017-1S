@@ -1,0 +1,33 @@
+body {
+	font-family: 'El Messiri', sans-serif;
+	background-color: #bebebe;
+}
+
+.starter-template {
+	padding: 3em 2em 9em 2em;
+	background-color: #e5e5e5;
+}
+
+.over {
+	color: red;
+	font-size: 1.2em;
+}
+
+#MSB, #OVR {
+	padding-left: 1.7em;
+}
+
+td {
+	border-left:  0.625em solid #e5e5e5;
+}
+
+.rodape {
+    background-color: #000;
+    color: #F2FFFC;
+    clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	padding: .5em;
+}

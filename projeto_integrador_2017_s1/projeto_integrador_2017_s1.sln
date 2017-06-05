@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projeto_integrador_2017_s1", "projeto_integrador_2017_s1\projeto_integrador_2017_s1.csproj", "{CB72E243-9F1E-4378-B47C-91E7FF131DC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projeto_integrador_2017_s1.Tests", "projeto_integrador_2017_s1.Tests\projeto_integrador_2017_s1.Tests.csproj", "{3DF793F6-DF9A-48B8-905B-3AED0A911724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DF793F6-DF9A-48B8-905B-3AED0A911724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF793F6-DF9A-48B8-905B-3AED0A911724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF793F6-DF9A-48B8-905B-3AED0A911724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF793F6-DF9A-48B8-905B-3AED0A911724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB72E243-9F1E-4378-B47C-91E7FF131DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB72E243-9F1E-4378-B47C-91E7FF131DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB72E243-9F1E-4378-B47C-91E7FF131DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB72E243-9F1E-4378-B47C-91E7FF131DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
