@@ -12,7 +12,7 @@ namespace projeto_integrador_2017_s1.Controllers
 		public ActionResult Index ()
 		{
 			ViewBag.Model1 = "active";
-			ViewBag.Title = "Projeto de Integração";
+			ViewBag.Title = "Projeto integrador";
 			return View ();
 		}
 		public ActionResult Circuitos ()

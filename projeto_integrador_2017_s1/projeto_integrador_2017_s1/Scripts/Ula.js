@@ -4,6 +4,8 @@ var dec = document.querySelector(".v2");
 var sRes = document.querySelector(".sRes");
 var carrier = document.querySelector(".MSB");
 var overflow = document.querySelector(".OVR");
+var acao = document.querySelector(".S");
+var cn = document.querySelector(".cn");
 var pl1 = document.querySelector(".pl1");
 var pl2 = document.querySelector(".pl2");
 
@@ -11,6 +13,12 @@ var pl2 = document.querySelector(".pl2");
 function calculo(act) {
     var sVal1 = document.querySelector(".sVal1").value;
     var sVal2 = document.querySelector(".sVal2").value
+
+	// preset alterar o resultado e para a função
+	if (act == "set") {
+		sRes.innerHTML = "1111";
+		return;
+	}
 
     if (checkVals(sVal1) && checkVals(sVal2)) {
         sVal1 = reSize(sVal1);
@@ -20,34 +28,48 @@ function calculo(act) {
         v1 = parseInt(sVal1, 2);
         v2 = parseInt(sVal2, 2);
 
-		// contas de acordo com o que é requerido
-        if (act == "aMenosB") result = v1 - v2;
-        if (act == "bMenosA") result = v2 - v1;
-        if (act == "aMaisB") result = v1 + v2;
+        // contas de acordo com o que é requerido
+
+        if (act == "aMenosB") {
+            result = v1 - v2;
+            acao.innerHTML = "010";
+            cn.innerHTML = "1";
+        }
+        if (act == "bMenosA") {
+            result = v2 - v1;
+            acao.innerHTML = "001";
+            cn.innerHTML = "1";
+        }
+        if (act == "aMaisB") {
+            result = v1 + v2;
+            acao.innerHTML = "011";
+            cn.innerHTML = "0";
+        }
 
         overflow.innerHTML = 0;
         carrier.innerHTML = 0;
-		overflow.classList.remove("over");
-		carrier.classList.remove("over");
-		pl1.classList.remove("over");
-		pl2.classList.remove("over");
+        overflow.classList.remove("over");
+        carrier.classList.remove("over");
+        pl1.classList.remove("over");
+        pl2.classList.remove("over");
 
-		// em caso de o valor sair negativo
+        // em caso de o valor sair negativo
         if (result < 0) {
             carrier.innerHTML = 1;
-			carrier.classList.add("over");
-			pl1.classList.add("over");
+            carrier.classList.add("over");
+            pl1.classList.add("over");
             result = result * -1;
         }
-		if (result > 15) { // em caso do valor ser >15
+		 // em caso do valor ser > 15 ou > 7 caso negativo
+        if (result > 15 || (cn.innerHTML == "1" && result > 8)) {
             result = 0;
             overflow.innerHTML = 1;
-			overflow.classList.add("over");
-			pl2.classList.add("over");
+            overflow.classList.add("over");
+            pl2.classList.add("over");
         }
 
         resBin = reSize((result >>> 0).toString(2));
-        sRes.innerHTML = resBin;
+        sRes.innerHTML = resBin.split('').reverse().join('');
     } else alert("Um dos valores não é valido");
 }
 

@@ -1,12 +1,30 @@
 <style media="screen">
-	.out { font-size: 1.5em;	};
+	.out { font-size: 2em;	};
 </style>
-<br><br><br><br>
+<h1>Unidade Lógica Aritimética (ULA) 74LS382 / HC382</h1>
+
+<p>A imagem abaixo representa uma ULA disponivel como 74LS382 (TTL) e 74HC382 (CMOS). Este Circuito Integrado (CI) de 20 pinos opera com duas entradas de quatro bits A e B para produzir um resultado de 4 bits F. Esta ULA pode performar oito operações diferentes (no exemplo abaixo teremos apenas 5 dessas operações). Para realizar as operações, a ULA depende da entrada de o que será feito em forma de 3 bits na entrada S. A tabela abaixo demonstra o que cada valor faz</p>
+
+<h4>Operador CLEAR:</h4> <p>Com a entrada S = 000, a ULA limpa todos o bits da saida F = 0000.</p>
+
+<h4>Operador ADD:</h4> <p>Com a entrada S = 011 a ULA irá realizar a soma dos valores em A e B. Para essa operação, o Bit Menos Significante (LSB) deve ser 0. Cn+4 é o carry da saida, que é mostrada a partir do Bit Mais Significante (MSB). OVR é o indicador de overflow da saida e é alterado para 1 quando a saida da soma ou subtração é grande demais para caber em 4 bits (incluindo o bit de sinal).</p>
+
+<h4>Operador SUBTRACT:</h4> <p>Com a entrada S = 001 a ULA irá realizar a subtração do valor A pelo valor B. Com S = 010, a subtração será B menos A. Em ambos os casos, a diferença aparecerá em F. Note que para subtrair é preciso que a entrada Cn seja 1.</p>
+
+<h4>Operador PRESET:</h4> <p>Com a entrada S = 111 a ULA irá realizar definir o valor da saida F = 1111.</p>
+
+<img class="imagem" src="../../Models/cicuitos.png" alt="Representação da ULA 74LS382 e tabela de representação" title="ULA 74LS382 / HC382" width="100%">
+
+<br><br><h3>Abaixo o funcionamento da ULA</h3><br><br>
 <div class="circuito">
 	<table class="out">
 		<tr>
-			<td class="S pull-right"> 000</td>
+			<td class="S pull-right">000</td>
 			<td>Ação Realizada</td>
+		</tr>
+		<tr>
+			<td class="cn pull-right">0</td>
+			<td>Cn</td>
 		</tr>
 		<tr>
 			<td class="v1 pull-right">0000</td>
@@ -17,24 +35,25 @@
 			<td>Valor B</td>
 		</tr>
 		<tr>
-			<td class="sRes pull-right">0000</td>
-			<td>Resultado</td>
+			<td class="MSB pull-right">0</td>
+			<td class="pl1">Cn+4</td>
 		</tr>
 		<tr>
-			<td class="MSB pull-right">0</td>
-			<td class="pl1">Valor Negativo</td>
+			<td class="sRes pull-right">0000</td>
+			<td>Valor F</td>
 		</tr>
 		<tr>
 			<td class="OVR pull-right">0</td>
-			<td class="pl2">Valor com mais de 4</td>
+			<td class="pl2">OVR</td>
 		</tr>
 	</table><br>
-	<input class="sVal1" type="text" maxlength="4" />
-	<input class="sVal2" type="text" maxlength="4" /><br><br>
-	<button onclick="calculo('bMenosA')">B MENOS A ( 001 )</button>
-	<button onclick="calculo('aMenosB')">A MENOS B ( 010 )</button>
-	<button onclick="calculo('aMaisB')">A MAIS B ( 011 )</button>
-	<button type="button" onclick="location.reload();">LIMPAR ( 000 )</button>
+	A <input class="sVal1" type="text" maxlength="4" />
+	B <input class="sVal2" type="text" maxlength="4" /><br><br>
+	<button onclick="calculo('bMenosA')">B menos A ( 001 )</button>
+	<button onclick="calculo('aMenosB')">A menos B ( 010 )</button><br><br>
+	<button onclick="calculo('aMaisB')">A mais B ( 011 )</button>
+	<button type="button" onclick="location.reload();">CLEAR ( 000 )</button>
+	<button type="button" onclick="calculo('set')">PRESET ( 111 )</button>
 
 </div>
 
