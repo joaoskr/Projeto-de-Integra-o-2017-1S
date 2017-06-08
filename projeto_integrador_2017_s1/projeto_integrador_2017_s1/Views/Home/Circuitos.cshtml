@@ -1,31 +1,39 @@
 <style media="screen">
-td {border-left:  0.625em solid #e5e5e5;}
+td {
+	border-left:  0.625em solid #e5e5e5;
+	font-weight: bold;
+}
+tr {
+	height: 1em;
+}
+input {
+	margin: .25em;
+}
 </style>
 
 <h1>Unidade Lógica Aritimética (ULA) 74LS382 / HC382</h1>
 
-<p>A imagem abaixo representa uma ULA disponivel como 74LS382 (TTL) e 74HC382 (CMOS). Este Circuito Integrado (CI) de 20 pinos opera com duas entradas de quatro bits A e B para produzir um resultado de 4 bits F. Esta ULA pode performar oito operações diferentes (no exemplo abaixo teremos apenas 5 dessas operações). Para realizar as operações, a ULA depende da entrada de o que será feito em forma de 3 bits na entrada S. A tabela abaixo demonstra o que cada valor faz</p>
+<p>A imagem abaixo representa uma ULA disponivel como 74LS382 (TTL) e 74HC382 (CMOS). Este Circuito Integrado (CI) de 20 pinos opera com duas entradas de quatro bits A e B para produzir um resultado de 4 bits F. Esta ULA pode performar oito operações diferentes (no exemplo abaixo teremos apenas 5 dessas operações). Para realizar as operações, a ULA depende da entrada de o que será feito em forma de 3 bits na entrada S. A tabela abaixo demonstra o que cada valor faz</p><br>
 
-<h4>Operador CLEAR:</h4> <p>Com a entrada S = 000, a ULA limpa todos o bits da saida F = 0000.</p>
+<h4>Operador CLEAR:</h4> <p>Com a entrada S = 000, a ULA limpa todos o bits da saida F = 0000.</p><br>
 
-<h4>Operador ADD:</h4> <p>Com a entrada S = 011 a ULA irá realizar a soma dos valores em A e B. Para essa operação, o Bit Menos Significante (LSB) deve ser 0. Cn+4 é o carry da saida, que é mostrada a partir do Bit Mais Significante (MSB). OVR é o indicador de overflow da saida e é alterado para 1 quando a saida da soma ou subtração é grande demais para caber em 4 bits (incluindo o bit de sinal).</p>
+<h4>Operador ADD:</h4> <p>Com a entrada S = 011 a ULA irá realizar a soma dos valores em A e B. Para essa operação, o Bit Menos Significante (LSB) deve ser 0. Cn+4 é o carry da saida, que é mostrada a partir do Bit Mais Significante (MSB). OVR é o indicador de overflow da saida e é alterado para 1 quando a saida da soma ou subtração é grande demais para caber em 4 bits (incluindo o bit de sinal).</p><br>
 
-<h4>Operador SUBTRACT:</h4> <p>Com a entrada S = 001 a ULA irá realizar a subtração do valor A pelo valor B. Com S = 010, a subtração será B menos A. Em ambos os casos, a diferença aparecerá em F. Note que para subtrair é preciso que a entrada Cn seja 1.</p>
+<h4>Operador SUBTRACT:</h4> <p>Com a entrada S = 001 a ULA irá realizar a subtração do valor A pelo valor B. Com S = 010, a subtração será B menos A. Em ambos os casos, a diferença aparecerá em F. Note que para subtrair é preciso que a entrada Cn seja 1.</p><br>
 
-<h4>Operador XOR:</h4> <p>Com a entrada S = 100 a ULA irá realizar uma operação XOR bit por bit nos valores A e B. Abaixo um uma representação para A = 0110 e B = 1100.</p><br>
+<h4>Operador XOR:</h4> <p>Com a entrada S = 100 a ULA irá realizar uma operação XOR bit por bit nos valores A e B. Abaixo um uma representação para A = 0110 e B = 1100.</p>
 <p>
 A3 XOR B3 = 0 XOR 1 = 1 = F3<br>
 A2 XOR B2 = 1 XOR 1 = 0 = F2<br>
 A1 XOR B1 = 1 XOR 0 = 1 = F1<br>
 A0 XOR B0 = 0 XOR 0 = 0 = F0<br>
-</p>
+</p><br>
 
-<h4>Operador OR:</h4> <p>Com a entrada S = 101 a ULA irá realizar uma operação OR bit por bit nos valores A e B. Por exemplo, com A = 0110 e B = 1100, a UlA irá gerar o resultado F = 1110.</p>
+<h4>Operador OR:</h4> <p>Com a entrada S = 101 a ULA irá realizar uma operação OR bit por bit nos valores A e B. Por exemplo, com A = 0110 e B = 1100, a UlA irá gerar o resultado F = 1110.</p><br>
 
-<h4>Operador AND:</h4> <p>Com a entrada S = 110 a ULA irá realizar uma operação OR bit por bit nos valores A e B. Por exemplo, com A = 0110 e B = 1100, a UlA irá gerar o resultado F = 0100.</p>
+<h4>Operador AND:</h4> <p>Com a entrada S = 110 a ULA irá realizar uma operação OR bit por bit nos valores A e B. Por exemplo, com A = 0110 e B = 1100, a UlA irá gerar o resultado F = 0100.</p><br>
 
 <h4>Operador PRESET:</h4> <p>Com a entrada S = 111 a ULA irá realizar definir o valor da saida F = 1111.</p>
-
 
 <br><br><img class="imagem" src="../../Models/cicuitos.png" alt="Representação da ULA 74LS382 e tabela de representação" title="ULA 74LS382 / HC382" width="100%">
 
@@ -34,89 +42,90 @@ A0 XOR B0 = 0 XOR 0 = 0 = F0<br>
 <div class="circuito">
 <table class="sized">
   <tr>
-    <td class="a3">0</td>
+    <td class="a3 corZero">0</td>
     <td>A3</td>
   </tr>
   <tr>
-    <td class="a2">0</td>
+    <td class="a2 corZero">0</td>
     <td class="">A2</td>
   </tr>
   <tr>
-    <td class="a1">0</td>
+    <td class="a1 corZero">0</td>
     <td>A1</td>
     <td></td><td></td><td></td><td></td><td></td>
     <td class="pull-right">F3</td>
-    <td class="f3">0</td>
+    <td class="f3 corZero">0</td>
   </tr>
   <tr>
-    <td class="a0">0</td>
+    <td class="a0 corZero">0</td>
     <td>A0</td>
     <td></td><td></td><td></td><td></td><td></td>
     <td class="pull-right">F2</td>
-    <td class="f2">0</td>
+    <td class="f2 corZero">0</td>
   </tr>
   <tr>
     <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     <td class="pull-right">F1<br></td>
-    <td class="f1">0</td>
+    <td class="f1 corZero">0</td>
   </tr>
   <tr>
-    <td class="b3">0</td>
+    <td class="b3 corZero">0</td>
     <td>B3</td>
     <td></td><td></td><td></td><td></td><td></td>
     <td class="pull-right">F0</td>
-    <td class="f0">0</td>
+    <td class="f0 corZero">0</td>
   </tr>
   <tr>
-    <td class="b2">0</td>
+    <td class="b2 corZero">0</td>
     <td>B2</td>
     <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
   </tr>
   <tr>
-    <td class="b1">0</td>
+    <td class="b1 corZero">0</td>
     <td>B1</td>
 	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
   </tr>
   <tr>
-    <td class="b0">0</td>
+    <td class="b0 corZero">0</td>
     <td>B0</td>
 	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
   </tr>
   <tr>
 	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     <td>Cn+4</td>
-    <td class="cn4">0</td>
+    <td class="cn4 corZero">0</td>
   </tr>
   <tr>
-    <td class="cn">0</td>
+    <td class="cn corZero">0</td>
     <td>Cn</td>
   </tr>
   <tr></tr>
   <tr>
-    <td class="s2">0</td>
+    <td class="s2 corZero">0</td>
     <td>S2</td>
 	<td></td><td></td><td></td><td></td><td></td>
     <td>OVR</td>
-    <td class="ovr">0</td>
+    <td class="ovr corZero">0</td>
   </tr>
   <tr>
-    <td class="s1">0</td>
+    <td class="s1 corZero">0</td>
     <td>S1</td>
 
   </tr>
   <tr>
-    <td class="s0">0</td>
+    <td class="s0 corZero">0</td>
     <td>S0</td>
   </tr>
 </table><br><br>
-	A <input class="valorA" type="text" maxlength="4" /><br><br>
-	B <input class="valorB" type="text" maxlength="4" /><br><br>
+	A <input class="valorA" type="text" maxlength="4" /><br>
+	B <input class="valorB" type="text" maxlength="4" /><br>
+	*Obs = caixas de textos vazias serão tratadas como 0000<br><br>
 	<button class="conta" onclick="start('bsuba');">B menos A ( 001 )</button>
-	<button class="conta" onclick="start('asubb');">A menos B ( 010 )</button>
+	<button class="conta" onclick="start('asubb');">A menos B ( 010 )</button><br>
 	<button class="conta" onclick="start('soma');">A mais B ( 011 )</button>
-	<button class="conta" onclick="start('aeb');">A e B ( 110 )</button>
+	<button class="conta" onclick="start('aeb');">A e B ( 110 )</button><br>
 	<button class="conta" onclick="start('aoub');">A ou B ( 101 )</button>
-	<button class="conta" onclick="start('axorb');">A xor B ( 100 )</button>
+	<button class="conta" onclick="start('axorb');">A xor B ( 100 )</button><br>
 	<button class="conta" onclick="limpar();">CLEAR ( 000 )</button>
 	<button class="conta" onclick="setar();">PRESET ( 111 )</button>
 

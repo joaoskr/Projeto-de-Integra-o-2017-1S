@@ -29,11 +29,16 @@ body {
     width: 100%;
 	padding:.5em .5em 0 .5em;
 }
-tr {
-	height: 1em;
-}
 
 .sized {
 
 	font-size: 2em;
+}
+
+.corUm {
+	color: #00008B;
+}
+
+.corZero {
+	color: #ff0000;
 }
