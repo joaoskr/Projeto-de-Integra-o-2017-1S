@@ -8,24 +8,15 @@ body {
 	background-color: white;
 }
 
-.over {
-	color: red;
-	font-size: 1.2em;
-}
-
-#MSB, #OVR {
-	padding-left: 1.7em;
-}
-
-td {
-	border-left:  0.625em solid #e5e5e5;
-}
-
 .circuito {
 	padding: 2em;
-	width: 50%;
+	width: 65%;
 	margin: 0 auto;
 	background-color: #e5e5e5;
+}
+
+.conta {
+	margin: .25em;
 }
 
 .rodape {
@@ -37,4 +28,12 @@ td {
     left: 0;
     width: 100%;
 	padding:.5em .5em 0 .5em;
+}
+tr {
+	height: 1em;
+}
+
+.sized {
+
+	font-size: 2em;
 }

@@ -1,6 +1,7 @@
 <style media="screen">
-	.out { font-size: 2em;	};
+td {border-left:  0.625em solid #e5e5e5;}
 </style>
+
 <h1>Unidade Lógica Aritimética (ULA) 74LS382 / HC382</h1>
 
 <p>A imagem abaixo representa uma ULA disponivel como 74LS382 (TTL) e 74HC382 (CMOS). Este Circuito Integrado (CI) de 20 pinos opera com duas entradas de quatro bits A e B para produzir um resultado de 4 bits F. Esta ULA pode performar oito operações diferentes (no exemplo abaixo teremos apenas 5 dessas operações). Para realizar as operações, a ULA depende da entrada de o que será feito em forma de 3 bits na entrada S. A tabela abaixo demonstra o que cada valor faz</p>
@@ -11,50 +12,112 @@
 
 <h4>Operador SUBTRACT:</h4> <p>Com a entrada S = 001 a ULA irá realizar a subtração do valor A pelo valor B. Com S = 010, a subtração será B menos A. Em ambos os casos, a diferença aparecerá em F. Note que para subtrair é preciso que a entrada Cn seja 1.</p>
 
+<h4>Operador XOR:</h4> <p>Com a entrada S = 100 a ULA irá realizar uma operação XOR bit por bit nos valores A e B. Abaixo um uma representação para A = 0110 e B = 1100.</p><br>
+<p>
+A3 XOR B3 = 0 XOR 1 = 1 = F3<br>
+A2 XOR B2 = 1 XOR 1 = 0 = F2<br>
+A1 XOR B1 = 1 XOR 0 = 1 = F1<br>
+A0 XOR B0 = 0 XOR 0 = 0 = F0<br>
+</p>
+
+<h4>Operador OR:</h4> <p>Com a entrada S = 101 a ULA irá realizar uma operação OR bit por bit nos valores A e B. Por exemplo, com A = 0110 e B = 1100, a UlA irá gerar o resultado F = 1110.</p>
+
+<h4>Operador AND:</h4> <p>Com a entrada S = 110 a ULA irá realizar uma operação OR bit por bit nos valores A e B. Por exemplo, com A = 0110 e B = 1100, a UlA irá gerar o resultado F = 0100.</p>
+
 <h4>Operador PRESET:</h4> <p>Com a entrada S = 111 a ULA irá realizar definir o valor da saida F = 1111.</p>
 
-<img class="imagem" src="../../Models/cicuitos.png" alt="Representação da ULA 74LS382 e tabela de representação" title="ULA 74LS382 / HC382" width="100%">
+
+<br><br><img class="imagem" src="../../Models/cicuitos.png" alt="Representação da ULA 74LS382 e tabela de representação" title="ULA 74LS382 / HC382" width="100%">
 
 <br><br><h3>Abaixo o funcionamento da ULA</h3><br><br>
+
 <div class="circuito">
-	<table class="out">
-		<tr>
-			<td class="S pull-right">000</td>
-			<td>Ação Realizada</td>
-		</tr>
-		<tr>
-			<td class="cn pull-right">0</td>
-			<td>Cn</td>
-		</tr>
-		<tr>
-			<td class="v1 pull-right">0000</td>
-			<td>Valor A</td>
-		</tr>
-		<tr>
-			<td class="v2 pull-right">0000</td>
-			<td>Valor B</td>
-		</tr>
-		<tr>
-			<td class="MSB pull-right">0</td>
-			<td class="pl1">Cn+4</td>
-		</tr>
-		<tr>
-			<td class="sRes pull-right">0000</td>
-			<td>Valor F</td>
-		</tr>
-		<tr>
-			<td class="OVR pull-right">0</td>
-			<td class="pl2">OVR</td>
-		</tr>
-	</table><br>
-	A <input class="sVal1" type="text" maxlength="4" />
-	B <input class="sVal2" type="text" maxlength="4" /><br><br>
-	<button onclick="calculo('bMenosA')">B menos A ( 001 )</button>
-	<button onclick="calculo('aMenosB')">A menos B ( 010 )</button><br><br>
-	<button onclick="calculo('aMaisB')">A mais B ( 011 )</button>
-	<button type="button" onclick="location.reload();">CLEAR ( 000 )</button>
-	<button type="button" onclick="calculo('set')">PRESET ( 111 )</button>
+<table class="sized">
+  <tr>
+    <td class="a3">0</td>
+    <td>A3</td>
+  </tr>
+  <tr>
+    <td class="a2">0</td>
+    <td class="">A2</td>
+  </tr>
+  <tr>
+    <td class="a1">0</td>
+    <td>A1</td>
+    <td></td><td></td><td></td><td></td><td></td>
+    <td class="pull-right">F3</td>
+    <td class="f3">0</td>
+  </tr>
+  <tr>
+    <td class="a0">0</td>
+    <td>A0</td>
+    <td></td><td></td><td></td><td></td><td></td>
+    <td class="pull-right">F2</td>
+    <td class="f2">0</td>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    <td class="pull-right">F1<br></td>
+    <td class="f1">0</td>
+  </tr>
+  <tr>
+    <td class="b3">0</td>
+    <td>B3</td>
+    <td></td><td></td><td></td><td></td><td></td>
+    <td class="pull-right">F0</td>
+    <td class="f0">0</td>
+  </tr>
+  <tr>
+    <td class="b2">0</td>
+    <td>B2</td>
+    <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td class="b1">0</td>
+    <td>B1</td>
+	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+    <td class="b0">0</td>
+    <td>B0</td>
+	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr>
+	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+    <td>Cn+4</td>
+    <td class="cn4">0</td>
+  </tr>
+  <tr>
+    <td class="cn">0</td>
+    <td>Cn</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <td class="s2">0</td>
+    <td>S2</td>
+	<td></td><td></td><td></td><td></td><td></td>
+    <td>OVR</td>
+    <td class="ovr">0</td>
+  </tr>
+  <tr>
+    <td class="s1">0</td>
+    <td>S1</td>
+
+  </tr>
+  <tr>
+    <td class="s0">0</td>
+    <td>S0</td>
+  </tr>
+</table><br><br>
+	A <input class="valorA" type="text" maxlength="4" /><br><br>
+	B <input class="valorB" type="text" maxlength="4" /><br><br>
+	<button class="conta" onclick="start('bsuba');">B menos A ( 001 )</button>
+	<button class="conta" onclick="start('asubb');">A menos B ( 010 )</button>
+	<button class="conta" onclick="start('soma');">A mais B ( 011 )</button>
+	<button class="conta" onclick="start('aeb');">A e B ( 110 )</button>
+	<button class="conta" onclick="start('aoub');">A ou B ( 101 )</button>
+	<button class="conta" onclick="start('axorb');">A xor B ( 100 )</button>
+	<button class="conta" onclick="limpar();">CLEAR ( 000 )</button>
+	<button class="conta" onclick="setar();">PRESET ( 111 )</button>
 
 </div>
-
-	<script src="/Scripts/Ula.js" charset="utf-8"></script>
