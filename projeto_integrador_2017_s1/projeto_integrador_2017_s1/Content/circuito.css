@@ -1,0 +1,35 @@
+td {
+    border-left: 0.625em solid #e5e5e5;
+    font-weight: bold;
+}
+
+tr {
+    height: 1em;
+}
+
+input {
+    margin: .25em;
+}
+
+button {
+    margin: .25em;
+}
+
+.circuito {
+    padding: 1em;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #e5e5e5;
+}
+
+.sized {
+    font-size: 2em;
+}
+
+.corUm {
+    color: #00008B;
+}
+
+.corZero {
+    color: #ff0000;
+}

@@ -1,5 +1,5 @@
 function start(act) {
-	limpar();
+    limpar();
     var valorA = document.querySelector(".valorA").value;
     var valorB = document.querySelector(".valorB").value;
 
@@ -21,14 +21,14 @@ function start(act) {
 
 // Subtração generalizado
 function subtra(valA, valB, s) {
-	var negativo = false;
+    var negativo = false;
     fillVal("cn", "1");
     fillValores("s", s, 3);
     var result = parseInt(valA, 2) - parseInt(valB, 2);
     if (result < 0) {
         fillVal("cn4", "1");
-		result *= -1;
-		negativo = true;
+        result *= -1;
+        negativo = true;
     }
     if (result > 7 && negativo) {
         fillValores("f", "0", 4);
@@ -52,44 +52,44 @@ function soma(valorA, valorB, s) {
         fillVal("ovr", "1");
         return;
     }
-	result = (result >>> 0).toString(2);
+    result = (result >>> 0).toString(2);
     fillValores("f", result, 4);
 }
 
 // Comando and: se valorA e valorB = 1 -> f = 1
 function aeb(valorA, valorB, s) {
-	var result;
+    var result;
     fillVal("cn", "0");
     fillValores("s", s, 3);
     for (var i = 0; i < 4; i++) {
         if (valorA[i] == "1" && valorB[i] == "1") result += "1";
         else result += "0";
     }
-	fillValores("f", result, 4);
+    fillValores("f", result, 4);
 }
 
 // Comando or: se valorA ou valorB = 1 -> F = 1
 function aoub(valorA, valorB, s) {
-	var result;
+    var result;
     fillVal("cn", "0");
     fillValores("s", s, 3);
     for (var i = 0; i < 4; i++) {
         if (valorA[i] == "1" || valorB[i] == "1") result += "1";
         else result += "0";
     }
-	fillValores("f", result, 4);
+    fillValores("f", result, 4);
 }
 
 // Comando xor: valorA diferente valorB = 1
 function axorb(valorA, valorB, s) {
-	var result;
+    var result;
     fillVal("cn", "0");
     fillValores("s", s, 3);
     for (var i = 0; i < 4; i++) {
         if (valorA[i] == valorB[i]) result += "0";
-        else  result += "1";
+        else result += "1";
     }
-	fillValores("f", result, 4);
+    fillValores("f", result, 4);
 }
 
 // Zera todos os valores
@@ -151,7 +151,7 @@ function mudaCor(val) {
         val.classList.add("corUm");
         val.classList.remove("corZero");
     } else {
-		val.classList.add("corZero");
-		val.classList.remove("corUm");
+        val.classList.add("corZero");
+        val.classList.remove("corUm");
     }
 }

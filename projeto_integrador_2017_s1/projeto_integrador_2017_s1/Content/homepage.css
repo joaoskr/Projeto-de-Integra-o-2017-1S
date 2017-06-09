@@ -1,0 +1,19 @@
+.home:link {
+    color: black;
+}
+
+.home:visited {
+    color: black;
+}
+
+.home:hover {
+    color: black;
+}
+
+.home:active {
+    color: black;
+}
+
+.starter-template {
+    padding: 3em 2em 2em 2em
+}
